@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OutdoorX | Camping Gear</title>
+    <meta name="description" content="Explore camping tents, backpacks, lanterns and sleeping bags at OutdoorX. Find suitable camping gear for your next adventure.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <a href="#home" class="logo">Outdoor<span>X</span></a>
+
+        <nav aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#products">Shop</a>
+            <a href="#weather-planner">Weather Guide</a>
+            <a href="#cart">Cart 🛒 <span id="cart-count">0</span></a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Home Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">EXPLORE MORE. WORRY LESS.</p>
+
+                <h1>
+                    Your Next Adventure
+                    Starts <span>Outdoors.</span>
+                </h1>
+
+                <p>
+                    Discover reliable camping gear for unforgettable journeys,
+                    peaceful nights and exciting outdoor adventures.
+                </p>
+
+                <a href="#products" class="btn">
+                    Explore Products →
+                </a>
+            </div>
+        </section>
+
+        <!-- Product Categories -->
+        <section id="categories" class="section">
+            <p class="eyebrow">FIND YOUR ESSENTIALS</p>
+
+            <h2>Shop by Category</h2>
+
+            <p>
+                Choose the right equipment for your next outdoor experience.
+            </p>
+
+            <div class="category-list">
+                <button
+                    type="button"
+                    class="category-btn active"
+                    data-category="All">
+                    All Gear
+                </button>
+
+                <button
+                    type="button"
+                    class="category-btn"
+                    data-category="Shelter">
+                    Camping Tents
+                </button>
+
+                <button
+                    type="button"
+                    class="category-btn"
+                    data-category="Storage">
+                    Backpacks
+                </button>
+
+                <button
+                    type="button"
+                    class="category-btn"
+                    data-category="Lighting">
+                    Lanterns
+                </button>
+
+                <button
+                    type="button"
+                    class="category-btn"
+                    data-category="Sleep">
+                    Sleeping Bags
+                </button>
+            </div>
+        </section>
+
+        <!-- Product List -->
+        <section id="products" class="section products-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">BUILT FOR THE OUTDOORS</p>
+                    <h2>Adventure Essentials</h2>
+                </div>
+
+                <p class="muted">
+                    Quality gear. Better adventures.
+                </p>
+            </div>
+
+            <!-- Products are displayed using script.js -->
+            <div id="product-list" class="product-grid">
+                <p>Loading camping products...</p>
+            </div>
+        </section>
+
+        <!-- Unique Feature: Weather Suitability -->
+        <section id="weather-planner" class="section weather-section">
+            <p class="eyebrow">SMART CAMPING ASSISTANT</p>
+
+            <h2>Choose Gear for Your Weather</h2>
+
+            <p class="weather-intro">
+                Plan your outdoor adventure by selecting the weather
+                you expect. OutdoorX will suggest suitable camping gear.
+            </p>
+
+            <div class="weather-planner-card">
+                <label for="weather-select">
+                    What weather do you expect?
+                </label>
+
+                <select id="weather-select">
+                    <option value="sunny">☀️ Sunny and warm</option>
+                    <option value="rainy">🌧️ Rainy</option>
+                    <option value="cold">❄️ Cold</option>
+                    <option value="windy">💨 Windy</option>
+                </select>
+
+                <button
+                    type="button"
+                    id="check-weather"
+                    class="btn">
+                    Find Suitable Gear →
+                </button>
+            </div>
+
+            <!-- Weather recommendations are displayed using script.js -->
+            <div id="weather-results" aria-live="polite">
+                <p>
+                    Select your expected weather and click
+                    Find Suitable Gear.
+                </p>
+            </div>
+        </section>
+
+        <!-- Shopping Cart -->
+        <section id="cart" class="section cart-section">
+            <p class="eyebrow">YOUR ADVENTURE KIT</p>
+
+            <h2>Your Shopping Cart</h2>
+
+            <p>
+                Review your selected camping equipment and update quantities.
+            </p>
+
+            <!-- Cart items are displayed using script.js -->
+            <div id="cart-items">
+                <p class="empty-cart">
+                    Your cart is empty. Explore our camping gear!
+                </p>
+            </div>
+
+            <!-- Cart Summary -->
+            <div class="cart-summary">
+                <p>
+                    <span>Total Items</span>
+                    <strong id="cart-count-summary">0</strong>
+                </p>
+
+                <p>
+                    <span>Subtotal</span>
+                    <strong id="cart-total">₹0</strong>
+                </p>
+
+                <p class="muted small">
+                    Shipping and taxes are not included.
+                </p>
+
+                <button
+                    type="button"
+                    id="checkout-btn"
+                    class="btn">
+                    Proceed to Checkout →
+                </button>
+
+                <p id="checkout-message" role="status"></p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <a href="#home" class="logo">Outdoor<span>X</span></a>
+
+        <p>Gear up. Get outside. Make memories.</p>
+
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#products">Shop Gear</a>
+            <a href="#weather-planner">Weather Guide</a>
+        </div>
+
+        <p class="copyright">
+            © 2026 OutdoorX Camping Gear. All rights reserved.
+        </p>
+    </footer>
+
+    <!-- Product Details Popup -->
+    <dialog id="product-dialog" aria-labelledby="dialog-title">
+        <button
+            type="button"
+            id="close-dialog"
+            class="close-btn"
+            aria-label="Close product details">
+            ✕
+        </button>
+
+        <!-- Product details are inserted using script.js -->
+        <div id="product-details"></div>
+    </dialog>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
